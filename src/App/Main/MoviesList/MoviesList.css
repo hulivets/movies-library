@@ -1,0 +1,37 @@
+.sort-btn-wrapp {
+    margin: 15px 0 0 15px;
+}
+.btn-show-more-less-wrapp button {
+    margin: 0 15px 15px 15px;
+    background-color: #089946;
+    color: #fff;
+    padding: 5px;
+    border: none;
+    outline: none;
+}
+.btn-show-more-less-wrapp button:hover {
+    background-color: #0a6e36;
+    transition: 0.3s;
+}
+.sort-asc-btn, .sort-desc-btn {
+    margin-right: 15px;
+    width: 100px;
+    padding: 10px;
+    background-color: #089946;
+    color: #fff;
+    border: none;
+    outline: none;
+}
+.sort-asc-btn:hover, .sort-desc-btn:hover {
+    background-color: #0a6e36;
+    color: #fff;
+    transition: 0.3s;
+
+}
+.movie-list-items {
+    flex-basis: 47%;
+    padding: 15px;
+    margin-top: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+}
+

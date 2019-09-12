@@ -1,0 +1,9 @@
+.msg-box-succeess {
+    margin: 15px;
+    padding: 15px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    transition: 0.4s;
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+}

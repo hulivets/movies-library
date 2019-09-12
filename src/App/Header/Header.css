@@ -1,0 +1,15 @@
+.header {
+    max-width: 100%;
+    background-color: #089946;
+}
+.header-inner {
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .logo {
+    margin: 15px 0;
+    color: #fff;
+    font-size: 35px;
+}

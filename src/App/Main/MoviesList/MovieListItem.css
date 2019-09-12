@@ -1,0 +1,62 @@
+.movie-list-item {
+    position: relative;
+    
+}
+.movie-list-item-id {
+    color: #888;
+    font-size: 14px;
+}
+.movie-list-item-title {
+    margin-top: 15px;
+    font-size: 30px;
+    font-weight: bold;
+    font-style: italic;
+    letter-spacing: 0.5px;
+}
+.movie-list-item-year, .movie-list-item-format, .movie-list-item-stars {
+    margin-top: 15px;
+    font-size: 22px;
+}
+.movie-list-item span {
+    font-weight: bold;
+}
+.btn-remove {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 25px;
+    height: 25px;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    background-color: rgb(226, 39, 39);
+    color: #fff;
+}
+.btn-remove:hover {
+    background-color: rgb(138, 33, 33);
+    transition: 0.3s;
+}
+.msg-confirm {
+    display: none;
+}
+.confirm-remove {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #fff;
+    transition: 0.3s;
+}
+.confirm-btn {
+    border: none;
+    font-size: 16px;
+    margin-top: 5px;
+    padding: 5px;
+    background-color: #089946;
+    color: #fff;
+    outline: none;
+}
+.confirm-btn:hover {
+    background-color: #0a6e36;
+}
