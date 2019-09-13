@@ -21,6 +21,7 @@ class AddMovieForm extends Component {
             releaseYearValid: false,
             formatValid: false,
             starsValid: false,
+            duplicateValid: false,
             formValid: false,
     }
 
@@ -31,12 +32,13 @@ class AddMovieForm extends Component {
         this.setState({
                 [name]: value,
             },
-            () => { this.validateField(name, value) }
+            () => { this.validateField(name, value) },
         )
     }
 
     validateField = (fieldName, value) => {
-
+        const { movies } =this.props
+        const { title, releaseYear, format, stars } = this.state
         let fieldValidationErrors = this.state.formErrors
         let titleValid = this.state.titleValid
         let releaseYearValid = this.state.releaseYearValid
@@ -64,22 +66,30 @@ class AddMovieForm extends Component {
                 break
         }
 
+        let hasDuplicates = movies.filter(item => {
+            return item.title === title && item.releaseYear === Number(releaseYear)
+                    && item.format === format && item.stars === stars 
+        })
+        
+        let duplicateValid = !hasDuplicates.length >= 1
         this.setState({
                 formErrors: fieldValidationErrors,
                 titleValid: titleValid,
                 releaseYearValid: releaseYearValid,
                 formatValid: formatValid,
                 starsValid: starsValid,
+                duplicateValid: duplicateValid
             },
-            this.validateForm
+            this.validateForm,
+           
         )
     }
 
     validateForm = () => {
-        const { titleValid, releaseYearValid, formatValid, starsValid } = this.state
+        const { titleValid, releaseYearValid, formatValid, starsValid, duplicateValid } = this.state
+
         this.setState({
-            formValid: titleValid && releaseYearValid && formatValid && starsValid
-        })
+            formValid: titleValid && releaseYearValid && formatValid && starsValid && duplicateValid})
     }
 
     hideMessageBoxSend = () => {
@@ -152,10 +162,14 @@ class AddMovieForm extends Component {
    }
 }
 
+const mapStateToProps = (state) => ({
+    movies: state.request.movies
+})
+
 const mapDispatchToProps = (dispatch) => ({
     getNewRequest: () => dispatch({
         type: "NEW_REQUEST_ON_POST",
     })
 })
 
-export default connect(null, mapDispatchToProps)(AddMovieForm)
+export default connect(mapStateToProps, mapDispatchToProps)(AddMovieForm)
